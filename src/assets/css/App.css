@@ -1,0 +1,17 @@
+/* Loader */
+@import url('./loaderCSS/loader.css');
+
+/* Autentication */
+@import url('./autenticaciónCSS/LoginPagina.css');
+@import url('./autenticaciónCSS/SingIn.css');
+@import url('./autenticaciónCSS/Verificacion.css');
+@import url('./autenticaciónCSS/CrearCuenta.css');
+@import url('./autenticaciónCSS/Direccion.css');
+@import url('./autenticaciónCSS/Marcador.css');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
