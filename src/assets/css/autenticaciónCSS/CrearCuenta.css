@@ -1,0 +1,14 @@
+.input_cuenta{
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    margin-left: 26px;
+    gap: 10px;
+}
+.title_cuenta{
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 7rem;
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+}
