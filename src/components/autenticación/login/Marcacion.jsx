@@ -1,8 +1,11 @@
 import React from 'react';
 import marcacionNumeros from '../../../../public/numeros.json';
 
+
+
 const Marcacion = () => {
   return (
+    <>
     <div className='marcacion'>
       {
         marcacionNumeros.map(num => (
@@ -11,6 +14,7 @@ const Marcacion = () => {
       }
 
     </div>
+    </>
   )
 }
 

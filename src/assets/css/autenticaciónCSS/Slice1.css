@@ -1,0 +1,26 @@
+.imgSlice1{
+    width: 80%;
+    margin-top: 8rem;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
+.title_slice1{
+    margin-top: 3rem;
+    margin-left: 5rem;
+    margin-bottom: 13rem;
+    font-size: 17px;
+}
+.butonSlice{
+    width: 80%;
+    height: 7vh;
+    border-radius: 10px;
+    border: none;
+    background-color: #FFE031;
+    margin-left: 3rem;
+    margin-top: 5px;
+}
+.img_slice1{
+    margin-left: 11rem;
+    width: 10vw;
+    margin-top: 2rem;
+}

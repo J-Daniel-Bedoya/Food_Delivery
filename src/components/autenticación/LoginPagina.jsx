@@ -4,6 +4,8 @@ import Direccion from './login/Direccion'
 import Marcacion from './login/Marcacion'
 import SingIn from './login/SingIn'
 import Verificacion from './login/Verificacion'
+import imgMarcacion from '../../assets/imgs/svg/Autentificacion.svg'
+
 
 const LoginPagina = () => {
   const [contador, setContador] = useState(1);
@@ -31,11 +33,21 @@ const LoginPagina = () => {
 
   return (
     <div className='login_pagina'>
+      <div>
+        <img src={imgMarcacion} alt="" className='imgMarcacion' />
+        <p>Verificacion</p>
+        <p>Enter the four-digit code from SMS SMS not received.Send again?</p>
+        <div className='input_login'>
+          <input></input>
+          <input></input>
+          <input></input>
+          <input></input>
+        </div>
+      </div>
       <div className='login_pagina__cotenido'>
         {cambioDePaginas()}
         <button onClick={() => setContador(contador+1)}>Siguiente</button>
       </div>
-
       <div className='login_pagina__btn'>
         {
           cambiarEstadoDelBtn ? (

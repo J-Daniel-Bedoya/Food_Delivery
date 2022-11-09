@@ -8,6 +8,9 @@
 @import url('./autenticaciónCSS/CrearCuenta.css');
 @import url('./autenticaciónCSS/Direccion.css');
 @import url('./autenticaciónCSS/Marcador.css');
+@import url('./autenticaciónCSS/Slice1.css');
+@import url('./autenticaciónCSS/Slice2.css');
+@import url('./autenticaciónCSS/Slice3.css');
 
 *{
   margin: 0;

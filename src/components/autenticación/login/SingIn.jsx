@@ -1,9 +1,19 @@
 import React from 'react'
+import imgSingin from '../../../assets/imgs/svg/Autentificacion.svg'
+import imgTel from '../../../assets/imgs/svg/Svg3.svg'
+
 
 const SingIn = () => {
   return (
     <div className='singin'>
-      <h1>Hola estas en el login "sing in</h1>
+      <img src={imgSingin} alt="" className='imgSingin' />
+      <p className='title_singin'>Sing in</p>
+      <p className='txt_singin'>Login or create an account with your <br/>  phone number to start ordering</p>
+      <div className='txt_number'>
+        <img src={imgTel} alt="" className='imgTel'/>
+        <p>+ 57</p>
+        <input className='input_number'></input>
+      </div>
     </div>
   )
 }
