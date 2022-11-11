@@ -1,0 +1,8 @@
+.topHome{
+    display: flex;
+    flex-direction: row;
+}
+.home_restaurante{
+    display: flex;
+    flex-direction: row;
+}
