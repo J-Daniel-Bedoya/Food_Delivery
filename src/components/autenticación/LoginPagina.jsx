@@ -35,7 +35,7 @@ const LoginPagina = () => {
     <div className='login_pagina'>
       <div className='login_pagina__cotenido'>
         {cambioDePaginas()}
-        <button onClick={() => setContador(contador+1)}>Siguiente</button>
+        {/* <button onClick={() => setContador(contador+1)}>Siguiente</button> */}
       </div>
       <div className='login_pagina__btn'>
         {
@@ -46,7 +46,7 @@ const LoginPagina = () => {
             }
           </button>
           ) : (
-            <Marcacion />
+            <Marcacion setContador={setContador} contador={contador}/>
           )
         }
       </div>
