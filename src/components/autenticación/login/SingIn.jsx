@@ -12,7 +12,7 @@ const SingIn = () => {
       <div className='txt_number'>
         <img src={imgTel} alt="" className='imgTel'/>
         <p>+ 57</p>
-        <input className='input_number'></input>
+        <input type={"number"} className='input_number'></input>
       </div>
     </div>
   )
