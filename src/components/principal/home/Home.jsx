@@ -1,31 +1,36 @@
 import React from 'react';
-import img_ubicacion from '../../assets/imgs/svg/Ubicacion.svg';
-import img_Cupon1 from '../../assets/imgs/svg/Cupon1.svg';
-import img_Cupon2 from '../../assets/imgs/svg/Cupon2.svg';
-import img_Categoria1 from '../../assets/imgs/svg/Categoria1.svg';
-import img_Categoria2 from '../../assets/imgs/svg/Categoria2.svg';
-import img_Categoria3 from '../../assets/imgs/svg/Categoria3.svg';
-import img_restaurante1 from '../../assets/imgs/svg/Restaurante1.svg';
-import img_calificacion1 from '../../assets/imgs/svg/Restaurante1_calificacion.svg';
-import img_restaurante2 from '../../assets/imgs/svg/Restaurante2.svg';
-import img_calificacion2 from '../../assets/imgs/svg/Restaurante2_calificacion.svg';
-import img_restaurante3 from '../../assets/imgs/svg/Restaurante3.svg';
-import img_calificacion3 from '../../assets/imgs/svg/Restaurante3_calificacion.svg';
-import img_restaurante4 from '../../assets/imgs/svg/Restaurante4.svg';
-import img_calificacion4 from '../../assets/imgs/svg/Restaurante4_calificacion.svg';
-import img_SlideHome from '../../assets/imgs/svg/Slide_home.svg';
-import img_SlideSearch from '../../assets/imgs/svg/Slide_search.svg';
-import img_SlideTime from '../../assets/imgs/svg/Slide_time.svg';
-import img_SlideProfile from '../../assets/imgs/svg/Slide_profile.svg';
+import img_ubicacion from '../../../assets/imgs/svg/Ubicacion.svg';
+import img_Cupon1 from '../../../assets/imgs/svg/Cupon1.svg';
+import img_Cupon2 from '../../../assets/imgs/svg/Cupon2.svg';
+import img_Categoria1 from '../../../assets/imgs/svg/Categoria1.svg';
+import img_Categoria2 from '../../../assets/imgs/svg/Categoria2.svg';
+import img_Categoria3 from '../../../assets/imgs/svg/Categoria3.svg';
+import img_restaurante1 from '../../../assets/imgs/svg/Restaurante1.svg';
+import img_calificacion1 from '../../../assets/imgs/svg/Restaurante1_calificacion.svg';
+import img_restaurante2 from '../../../assets/imgs/svg/Restaurante2.svg';
+import img_calificacion2 from '../../../assets/imgs/svg/Restaurante2_calificacion.svg';
+import img_restaurante3 from '../../../assets/imgs/svg/Restaurante3.svg';
+import img_calificacion3 from '../../../assets/imgs/svg/Restaurante3_calificacion.svg';
+import img_restaurante4 from '../../../assets/imgs/svg/Restaurante4.svg';
+import img_calificacion4 from '../../../assets/imgs/svg/Restaurante4_calificacion.svg';
+
+import img_SlideHome from '../../../assets/imgs/svg/Slide_home.svg';
+import img_SlideSearch from '../../../assets/imgs/svg/Slide_search.svg';
+import img_SlideTime from '../../../assets/imgs/svg/Slide_time.svg';
+import img_SlideProfile from '../../../assets/imgs/svg/Slide_profile.svg';
+
+import { useNavigate } from 'react-router-dom';
 
 
 
 
 const HomePagina = () => {
+  const navigate = useNavigate();
+
   return (
     <>
     <div className=''>
-     <div className='topHome'>
+     <div className='topHome' onClick={() => navigate("/Home/ManageAddress")}>
         <img src={img_ubicacion} alt="" className='img_ubicacion' />
         <div>
           <p>DELIVER TO</p>
@@ -44,7 +49,7 @@ const HomePagina = () => {
           <img src={img_Categoria3} alt="" className='img_Categoria3' />
         </div>
       </div>
-      <div className='home_restaurante'>
+      <div className='home_restaurante' onClick={() => navigate("/Home/RestaurantPage")}>
         <img src={img_restaurante1} alt="" className='img_restaurante1' />
         <div>
           <p>Pardes Restaurant</p>
@@ -82,9 +87,9 @@ const HomePagina = () => {
       </div>
       <div>
           <img src={img_SlideHome} alt="" className='img_SlideHome' />
-          <img src={img_SlideSearch} alt="" className='img_SlideSearch' />
-          <img src={img_SlideTime} alt="" className='img_SlideTime' />
-          <img src={img_SlideProfile} alt="" className='img_SlideProfile' />
+          <img src={img_SlideSearch} alt="" className='img_SlideSearch' onClick={() => navigate("/Search")}/>
+          <img src={img_SlideTime} alt="" className='img_SlideTime' onClick={() => navigate("/OrderHistory")}/>
+          <img src={img_SlideProfile} alt="" className='img_SlideProfile' onClick={() => navigate("/Profile")}/>
       </div>
 
 
