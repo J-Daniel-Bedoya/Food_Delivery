@@ -12,13 +12,13 @@ const LoginPagina = () => {
   const [cambiarEstadoDelBtn, setCambiarEstadoDelBtn] = useState(true)
   const cambioDePaginas = () => {
     switch (contador) {
+      // case 1:
+      //   return <SingIn />
+      // case 2:
+      //   return <Verificacion />
       case 1:
-        return <SingIn />
-      case 2:
-        return <Verificacion />
-      case 3:
         return <CrearCuenta />
-      case 4:
+      case 2:
         return <Direccion />
     }
   }
@@ -38,17 +38,17 @@ const LoginPagina = () => {
         {/* <button onClick={() => setContador(contador+1)}>Siguiente</button> */}
       </div>
       <div className='login_pagina__btn'>
-        {
-          cambiarEstadoDelBtn ? (
+        {/* {
+          cambiarEstadoDelBtn ? ( */}
           <button className='login__btn' onClick={() => setContador(contador+1)}>
             {
-              contador === 1 ? "Login" : contador === 2 ? "" : contador === 3 ? "Sing in" : "Confirm"
+              contador === 1 ? "Sing in" : contador === 2 ? "Confirm" : ""
             }
           </button>
-          ) : (
+          {/* ) : (
             <Marcacion setContador={setContador} contador={contador}/>
           )
-        }
+        } */}
       </div>
     </div>
   )

@@ -3,7 +3,10 @@ import imgSingin from '../../../assets/imgs/svg/Autentificacion.svg'
 import imgTel from '../../../assets/imgs/svg/Svg3.svg'
 
 
+
 const SingIn = () => {
+
+
   return (
     <div className='singin'>
       <img src={imgSingin} alt="" className='imgSingin' />
