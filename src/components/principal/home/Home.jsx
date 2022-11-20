@@ -20,12 +20,43 @@ import img_SlideTime from '../../../assets/imgs/svg/Slide_time.svg';
 import img_SlideProfile from '../../../assets/imgs/svg/Slide_profile.svg';
 
 import { useNavigate } from 'react-router-dom';
+import app from '../../../firebase/firebaseConfig';
+import { 
+  getFirestore, 
+  collection,
+  getDoc, 
+  getDocs, 
+  doc, 
+  deleteDoc, 
+  setDoc,
+} from 'firebase/firestore';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 
 
 
 const HomePagina = () => {
   const navigate = useNavigate();
+  const db = getFirestore(app)
+  const [lista, setLista] = useState();
+
+  useEffect(() => {
+    const getStore = async() => {
+      try {
+        const consulta = await getDocs(collection(db, 'stores'))
+        const docs = []
+        consulta.forEach(doc => {
+          docs.push({...doc.data(), id:doc.id})
+        }) 
+        setLista(docs);
+      } catch (error) {
+        throw error;
+      }
+    }
+    getStore();
+  }, [])
+  console.log(lista)
 
   return (
     <>
@@ -100,3 +131,4 @@ const HomePagina = () => {
 }
 
 export default HomePagina;
+

@@ -1,37 +1,15 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithPhoneNumber } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDI3Ap1nD3Wd2RiAszjFGvXIGfj5bLUAbg",
-  authDomain: "food-delivery-cfb12.firebaseapp.com",
-  projectId: "food-delivery-cfb12",
-  storageBucket: "food-delivery-cfb12.appspot.com",
-  messagingSenderId: "167113791960",
-  appId: "1:167113791960:web:3afc711b9f2de4df17faad"
+  apiKey: "AIzaSyCxQFtaeeOwinJV86YxS7uNoexYdh-au1w",
+  authDomain: "foodadeliveryapp.firebaseapp.com",
+  projectId: "foodadeliveryapp",
+  storageBucket: "foodadeliveryapp.appspot.com",
+  messagingSenderId: "868801719592",
+  appId: "1:868801719592:web:3b4b8cd439bc9792a7341d",
+  measurementId: "G-NJ57RPPVJR"
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig)
 
-const db = getAuth(app)
-
-module.exports = { auth, app };
-
-// Import the functions you need from the SDKs you need
-// import { initializeApp } from "firebase/app";
-// // TODO: Add SDKs for Firebase products that you want to use
-// // https://firebase.google.com/docs/web/setup#available-libraries
-
-// // Your web app's Firebase configuration
-// const firebaseConfig = {
-//   apiKey: "AIzaSyDI3Ap1nD3Wd2RiAszjFGvXIGfj5bLUAbg",
-//   authDomain: "food-delivery-cfb12.firebaseapp.com",
-//   projectId: "food-delivery-cfb12",
-//   storageBucket: "food-delivery-cfb12.appspot.com",
-//   messagingSenderId: "167113791960",
-//   appId: "1:167113791960:web:3afc711b9f2de4df17faad"
-// };
-
-// // Initialize Firebase
-// const app = initializeApp(firebaseConfig);
+export default app;

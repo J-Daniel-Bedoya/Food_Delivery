@@ -8,6 +8,8 @@ import Verificacion from './login/Verificacion'
 
 
 const LoginPagina = () => {
+  const [user, setUser] = useState(null);
+
   const [contador, setContador] = useState(1);
   const [cambiarEstadoDelBtn, setCambiarEstadoDelBtn] = useState(true)
   const cambioDePaginas = () => {

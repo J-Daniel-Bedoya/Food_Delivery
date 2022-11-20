@@ -11,6 +11,8 @@ import ManageAddress from './components/principal/home/ManageAddress';
 import OrderHistory from './components/principal/ordersHistory/OrderHistory';
 import Profile from './components/principal/profile/Profile';
 
+import app from './firebase/firebaseConfig';
+
 
 
 function App() {
@@ -29,7 +31,7 @@ function App() {
             <Routes>
     
               <Route path='/' element={<SlicePagina />}/>
-              <Route path='/login' element={<LoginPagina />}/>
+              <Route path='/login' element={<LoginPagina />}/>s
               <Route path='/Home' element={<HomePagina/>}/>
               <Route path='/Search' element={<SearchPage/>}/>
               <Route path='/OrderHistory' element={<OrderHistory />}/>
