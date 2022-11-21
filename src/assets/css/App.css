@@ -8,11 +8,17 @@
 @import url('./autenticaciónCSS/CrearCuenta.css');
 @import url('./autenticaciónCSS/Direccion.css');
 @import url('./autenticaciónCSS/Marcador.css');
-@import url('./autenticaciónCSS/Slice1.css');
-@import url('./autenticaciónCSS/Slice2.css');
-@import url('./autenticaciónCSS/Slice3.css');
-@import url('./autenticaciónCSS/Home.css');
-@import url('./autenticaciónCSS/search.css');
+@import url('./slices/Slice1.css');
+@import url('./slices/Slice2.css');
+@import url('./slices/Slice3.css');
+@import url('./home/Home.css');
+@import url('./home/restaurantPage.css');
+@import url('./home/productPage.css');
+@import url('./search/search.css');
+@import url('./profile/profile.css');
+@import url('./orderHistory/orderHistory.css');
+@import url('./footer/footer.css');
+
 
 *{
   margin: 0;

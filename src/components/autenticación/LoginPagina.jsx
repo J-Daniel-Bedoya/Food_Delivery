@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react'
+import { setConfirm } from '../../store/slices/confirm.slice'
 import CrearCuenta from './login/CrearCuenta'
 import Direccion from './login/Direccion'
-import Marcacion from './login/Marcacion'
-import SingIn from './login/SingIn'
-import Verificacion from './login/Verificacion'
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 
 
 const LoginPagina = () => {
   const [user, setUser] = useState(null);
-
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [contador, setContador] = useState(1);
-  const [cambiarEstadoDelBtn, setCambiarEstadoDelBtn] = useState(true)
+  // const [cambiarEstadoDelBtn, setCambiarEstadoDelBtn] = useState(true)
   const cambioDePaginas = () => {
     switch (contador) {
       // case 1:
@@ -24,14 +25,19 @@ const LoginPagina = () => {
         return <Direccion />
     }
   }
-
-  useEffect(() => {
+  const confirm = () => {
+    setContador(contador+1)
     if(contador === 2) {
-      setCambiarEstadoDelBtn(false)
-    }else {
-      setCambiarEstadoDelBtn(true)
+      dispatch(setConfirm())
     }
-  }, [contador])
+  }
+  // useEffect(() => {
+  //   if(contador === 2) {
+  //     setCambiarEstadoDelBtn(false)
+  //   }else {
+  //     setCambiarEstadoDelBtn(true)
+  //   }
+  // }, [contador])
 
   return (
     <div className='login_pagina'>
@@ -42,9 +48,9 @@ const LoginPagina = () => {
       <div className='login_pagina__btn'>
         {/* {
           cambiarEstadoDelBtn ? ( */}
-          <button className='login__btn' onClick={() => setContador(contador+1)}>
+          <button className='login__btn' onClick={() => confirm()}>
             {
-              contador === 1 ? "Sing in" : contador === 2 ? "Confirm" : ""
+              contador === 1 ? "Sing in" : contador === 2 ? "Confirm" : navigate("/home")
             }
           </button>
           {/* ) : (

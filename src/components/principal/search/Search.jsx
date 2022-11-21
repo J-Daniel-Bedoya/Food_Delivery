@@ -1,44 +1,105 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import imgLupa from  '../../../assets/imgs/svg/lupa.svg';
-import imgRecent from  '../../../assets/imgs/svg/Recent.svg';
-import img_SlideHome from '../../../assets/imgs/svg/Slide_home.svg';
-import img_SlideSearch from '../../../assets/imgs/svg/Slide_search.svg';
-import img_SlideTime from '../../../assets/imgs/svg/Slide_time.svg';
-import img_SlideProfile from '../../../assets/imgs/svg/Slide_profile.svg';
 import { useNavigate } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+
+import app from '../../../firebase/firebaseConfig';
+import { 
+  getFirestore, 
+  collection,
+  getDoc, 
+  getDocs, 
+  doc, 
+  deleteDoc, 
+  setDoc,
+} from 'firebase/firestore';
+import Footer from '../footer/Footer';
 
 const SearchPage = () => {
     
     const navigate = useNavigate();
+    const { register, handleSubmit } = useForm();
+
+    const db = getFirestore(app)
+    const [lista, setLista] = useState();
+  
+    useEffect(() => {
+      const getStore = async() => {
+        try {
+          const consulta = await getDocs(collection(db, 'stores'))
+          const docs = []
+          consulta.forEach(doc => {
+            docs.push({...doc.data(), id:doc.id})
+          }) 
+          setLista(docs);
+        } catch (error) {
+          throw error;
+        }
+      }
+      getStore();
+    }, [])
+
+    const [searchObject, setSearchObject] = useState({});
+
+    const submit = (form) => {
+        let numSearch = null;
+        const arrName = [];
+        const arrImg = [];
+        switch (form.search) {
+            case "salad":
+                numSearch = 0
+                break
+            case "pizza":
+                numSearch = 1
+                break
+            case "burger":
+                numSearch = 2
+                break
+        }
+        lista[numSearch].menus.map(name => {
+            arrName.push(name.name);
+            arrImg.push(name.img);
+        })
+        setSearchObject({arrName, arrImg});
+    }
 
   return (
-    <>
-        <div className='input_search'>
-            <img src={imgLupa} alt="" className='imgLupa' />
-            <p>Search for a dish</p>
+    <div className='search'>
+        <div className='search__container'>
+
+            <form onSubmit={handleSubmit(submit)} className='input_search'>
+                <img src={imgLupa} alt="" className='imgLupa' />
+                <input 
+                    type={"search"} 
+                    name="search" 
+                    className='search__input'  
+                    placeholder='Search for a dish' 
+                    {...register("search")}
+                />
+            </form>
+            <div className='serach__lista'>
+                <ul className='search__lista--img'>
+                    {
+                        searchObject.arrImg?.map((img, i) => (
+                            <img key={i} src={img} alt="" className='search__img'/>
+                        ))
+                    }
+                </ul>
+                <ul className='search__lista--name'>
+                    {
+                        searchObject.arrName?.map((name, i) => (
+                            <li key={i}>{name}</li>
+                        ))
+                    }
+                </ul>
+                
+            </div>
         </div>
-        <p>Recent searches</p>
-        <div>
-            <div>
-                <img src={imgRecent} alt="" className='imgRecent' />
-                <p>Pizza</p>
-            </div>
-            <div>
-                <img src={imgRecent} alt="" className='imgRecent' />
-                <p>Burger</p>
-            </div>
-            <div>
-                <img src={imgRecent} alt="" className='imgRecent' />
-                <p>Pizza</p>
-            </div>
-            <div>
-                <img src={img_SlideHome} alt="" className='img_SlideHome' onClick={() => navigate("/Home")}/>
-                <img src={img_SlideSearch} alt="" className='img_SlideSearch' />
-                <img src={img_SlideTime} alt="" className='img_SlideTime' onClick={() => navigate("/OrderHistory")}/>
-                <img src={img_SlideProfile} alt="" className='img_SlideProfile' onClick={() => navigate("/Profile")}/>
-            </div>
+        <div className='footer'>
+            <Footer />
         </div>
-    </>
+
+    </div>
   )
 }
 

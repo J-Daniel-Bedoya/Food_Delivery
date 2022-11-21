@@ -1,0 +1,11 @@
+.orderHistory{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.orderHistory__container{
+  height: 100%;
+  overflow-y: auto;
+}

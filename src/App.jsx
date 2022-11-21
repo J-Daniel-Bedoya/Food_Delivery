@@ -12,8 +12,8 @@ import OrderHistory from './components/principal/ordersHistory/OrderHistory';
 import Profile from './components/principal/profile/Profile';
 
 import app from './firebase/firebaseConfig';
-
-
+import ProductPage from './components/principal/home/ProductPage';
+import ProtectedRoutes from './components/protectedRoutes/ProtectedRoutes';
 
 function App() {
 
@@ -22,6 +22,13 @@ function App() {
   setTimeout(() => {
     setTime(true)
   }, 4000)
+
+
+  const [id, setId] = useState(0);
+  const product = (id, i) => {
+    setId(id);
+  }
+
   return (
     <HashRouter>
       <>
@@ -32,16 +39,21 @@ function App() {
     
               <Route path='/' element={<SlicePagina />}/>
               <Route path='/login' element={<LoginPagina />}/>s
-              <Route path='/Home' element={<HomePagina/>}/>
-              <Route path='/Search' element={<SearchPage/>}/>
-              <Route path='/OrderHistory' element={<OrderHistory />}/>
-              <Route path='/Profile' element={<Profile />}/>
-              
 
-              <Route path='/Home/RestaurantPage' element={<RestaurantPage />}/>
-              <Route path='/Home/ManageAddress' element={<ManageAddress />}/>
+              <Route element={<ProtectedRoutes />}>
+                <Route path='/Home' element={<HomePagina/>}/>
+                <Route path='/Search' element={<SearchPage/>}/>
+                <Route path='/OrderHistory' element={<OrderHistory />}/>
+                <Route path='/Profile' element={<Profile />}/>
+                
 
+                <Route path='/Home/RestaurantPage/:id' element={<RestaurantPage product={product}/>}/>
+                <Route path='/Home/RestaurantPage/:id/product/:id' element={<ProductPage idArray={id}/>}/>
+                <Route path='/Home/ManageAddress' element={<ManageAddress />}/>
+
+              </Route>
             </Routes>
+
           </div>
         ) : (
           <Loader />
