@@ -19,6 +19,12 @@
 @import url('./orderHistory/orderHistory.css');
 @import url('./footer/footer.css');
 
+/* @import url('./autenticaciónCSS/Slice1.css');
+@import url('./autenticaciónCSS/Slice2.css');
+@import url('./autenticaciónCSS/Slice3.css');
+@import url('./autenticaciónCSS/Home.css');
+@import url('./autenticaciónCSS/search.css');
+@import url('./autenticaciónCSS/RestaurantPage.css'); */
 
 *{
   margin: 0;
