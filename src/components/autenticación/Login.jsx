@@ -5,7 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useDispatch } from "react-redux";
 import { schemaLogin } from "../services/data";
 import { actionLoginAsync, loginProviderAsync } from "../../redux/actions/userActions";
-import googleLogo from "../../assets/imgs/gogleLogo.png";
+import googleLogo from "../../assets/imgs/png/gogleLogo.png";
 
 const Login = () => {
   const dispatch=useDispatch()

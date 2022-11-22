@@ -19,6 +19,7 @@ import PublicRouter from "./components/routes/PublicRouter";
 import { useDispatch, useSelector } from "react-redux";
 import { actionLoginSync } from "./redux/actions/userActions";
 import Login from "./components/autenticación/Login";
+import OrderList from "./components/orders/OrderList";
 
 function App() {
 
@@ -58,7 +59,6 @@ function App() {
           photoURL,
           uid,
         } = user?.auth.currentUser;
-        // console.log(email)
         dispatch(
           actionLoginSync({
             name: displayName,
@@ -85,8 +85,6 @@ function App() {
           <div className="App">
             <Routes>
 
-              {/* <Navigationbar isAuthentication={isLoggedIn} /> */}
-
               <Route element={<PublicRouter isAuthentication={isLoggedIn} />}>
                 <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login />} />
@@ -98,6 +96,7 @@ function App() {
                 <Route path='/OrderHistory' element={<OrderHistory />}/>
                 <Route path='/Profile' element={<Profile />}/>
                 
+                <Route path="/Home/OrderList/:id" element={<OrderList />}/>
 
                 <Route path='/Home/RestaurantPage/:id' element={<RestaurantPage product={product}/>}/>
                 <Route path='/Home/RestaurantPage/:id/product/:id' element={<ProductPage idArray={id}/>}/>

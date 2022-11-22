@@ -18,7 +18,7 @@ import {
   setDoc,
 } from 'firebase/firestore';
 import Footer from '../footer/Footer'; 
-// import { list } from 'firebase/storage';
+
 
 
 const HomePagina = () => {
@@ -41,7 +41,7 @@ const HomePagina = () => {
     }
     getStore();
   }, [])
-  console.log(lista)
+  
 
   return (
     <div className='home'>

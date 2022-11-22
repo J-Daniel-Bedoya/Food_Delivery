@@ -9,12 +9,13 @@
   gap: 1rem;
 }
 .restaurantPage__description--btn{
-  background-color: transparent;
-  border: none;
+  background-color: rgba(218, 222, 222, 0.381);
   width: 2rem;
-  height: 1.5rem;
-  font-size: 18px;
-  cursor: pointer;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
 }
 .restaurantPage__description--logo{
   width: 100%;

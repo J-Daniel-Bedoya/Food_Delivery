@@ -27,7 +27,7 @@ const SlicePagina = () => {
       <div>
         {carrusel()}
       </div>
-      <div>
+      <div className='slice__btn'>
         <button className='butonSlice' onClick={() => setNumero(numero+1)}>Next</button>
       </div>
     </div>

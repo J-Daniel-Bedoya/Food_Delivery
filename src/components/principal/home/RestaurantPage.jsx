@@ -37,11 +37,13 @@ const RestaurantPage = ({product}) => {
     }
     getStore();
   }, [])
-  console.log(lista)
+  
   return (
     <div className='restaurantPage'>
       <div className='restaurantPage__description'>
-        <button className='restaurantPage__description--btn' onClick={() => navigate(-1)}>{"<"}</button>
+        <div className='restaurantPage__description--btn' onClick={() => navigate(-1)}>
+          <p><i class="fa-solid fa-arrow-left"></i></p>
+        </div>
         <div className='restaurantPage__description--logo'>
           <img src={lista?.imgLogo} alt={"logo"} style={{padding: "2rem 0"}}/>
         </div>

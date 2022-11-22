@@ -10,9 +10,7 @@
 @import url('./autenticaciónCSS/CrearCuenta.css');
 @import url('./autenticaciónCSS/Direccion.css');
 @import url('./autenticaciónCSS/Marcador.css');
-@import url('./slices/Slice1.css');
-@import url('./slices/Slice2.css');
-@import url('./slices/Slice3.css');
+@import url('./slices/Slice.css');
 @import url('./home/Home.css');
 @import url('./home/restaurantPage.css');
 @import url('./home/productPage.css');
