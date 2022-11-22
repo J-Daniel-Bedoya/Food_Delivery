@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
-
+import master from '../../assets/imgs/png/Master card.png';
+import paypal from '../../assets/imgs/png/Pay pal.png';
+import cash from '../../assets/imgs/png/Cash.png';
+import address from '../../assets/imgs/png/SvgDirection.png';
 import { useNavigate, useParams } from 'react-router-dom';
 import app from '../../firebase/firebaseConfig';
 import { 
@@ -20,7 +23,7 @@ const OrderList = () => {
 
   const navigate = useNavigate();
   const db = getFirestore(app)
-  const [lista, setLista] = useState();
+  const [menu, setMenu] = useState();
 
   useEffect(() => {
     const getStore = async() => {
@@ -30,22 +33,60 @@ const OrderList = () => {
         consulta.forEach(doc => {
           docs.push({...doc.data(), id:doc.id})
         }) 
-        setLista(docs[0].menus[id-1]);
+        setMenu(docs[0].menus[id-1]);
       } catch (error) {
         throw error;
       }
     }
     getStore();
   }, [])
-  console.log(lista)
+  
+  const delivery = 4
+  const total = Number(price[0]) + delivery
 
   return (
-    <div>
-      <h3>New order</h3>
-      {/* <div style={{backgroundImage: `url(${lista.image})`}}></div> */}
-      <img src={lista?.img} alt="" />
-      <p>{lista?.name}</p>
-      <b>$ {price}</b>
+    <div className='orderList'>
+      <h3 className='orderList__h3'>New order</h3>
+      <div className='orderList__address--text'>
+        <p>Delicer to</p>
+        <div className='orderList__address'>
+          <img src={address} alt="" />
+          <p>882 Well St, New-York</p>
+        </div>
+      </div>
+      <div className='orderList__imgs'>
+        <img src={cash} alt="" />
+        <img src={master} alt="" />
+        <img src={paypal} alt="" />
+      </div>
+      <div className='orderList__info'>
+        <div className='orderList__info--img' style={{backgroundImage: `url(${menu?.img})`}}></div>
+        <p>{price[1]}</p>
+        <p>{menu?.name}</p>
+        <b>$ {price[0]}</b>
+      </div>
+      <div className='orderList__note'>
+        <p>Note</p>
+        <input type="text" placeholder='Write something' name="note" id="note" />
+      </div>
+      <div className='orderList__compra'>
+        <div>
+          <p>Products</p>
+          <p>{price[0]}$</p>
+        </div>
+        <div>
+          <p>Delivery</p>
+          <p>{delivery}$</p>
+        </div>
+        <hr />
+        <div>
+          <p>Total</p>
+          <p>{total}$</p>
+        </div>
+      </div>
+      <div className='orderList__btn'>
+        <button onClick={() => navigate("/Home/OrderList/Follow")}>Order</button>
+      </div>
     </div>
   )
 }

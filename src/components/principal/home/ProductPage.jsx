@@ -57,8 +57,9 @@ const ProductPage = ({idArray}) => {
 
   const cart = (idPage, num) => {
     navigate(`/Home/OrderList/${idPage}`)
-    dispatch(setPriceOrder(num))
-    console.log(num)
+    const object = [num, contador]
+    console.log(object)
+    dispatch(setPriceOrder(object))
   }
 
   return (

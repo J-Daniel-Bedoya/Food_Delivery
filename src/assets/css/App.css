@@ -17,6 +17,8 @@
 @import url('./search/search.css');
 @import url('./profile/profile.css');
 @import url('./orderHistory/orderHistory.css');
+@import url('./orderList/orderList.css');
+@import url('./orderList/orderFinaly.css');
 @import url('./footer/footer.css');
 
 /* @import url('./autenticaciónCSS/Slice1.css');

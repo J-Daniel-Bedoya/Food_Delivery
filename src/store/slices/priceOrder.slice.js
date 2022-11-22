@@ -2,10 +2,11 @@ import { createSlice } from '@reduxjs/toolkit';
   
 export const priceOrderSlice = createSlice({
   name: 'priceOrder',
-  initialState: 0,
+  initialState: [],
   reducers: {
     setPriceOrder: (state, actions) => {
-      return actions.payload
+      state = actions.payload
+      return state
     }
   }
 })

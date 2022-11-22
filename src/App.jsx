@@ -21,6 +21,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { actionLoginSync } from "./redux/actions/userActions";
 import Login from "./components/autenticación/Login";
 import OrderList from "./components/orders/OrderList";
+import OrderFinaly from "./components/orders/OrderFinaly";
 
 function App() {
 
@@ -96,9 +97,10 @@ function App() {
                 <Route path='/Search' element={<SearchPage/>}/>
                 <Route path='/OrderHistory' element={<OrderHistory />}/>
                 <Route path='/Profile' element={<Profile />}/>
-                <Route path='/ProfileEdit' element={<ProfileEdit />}/>
                 
+                <Route path='/Home/ProfileEdit' element={<ProfileEdit />}/>
                 <Route path="/Home/OrderList/:id" element={<OrderList />}/>
+                <Route path="/Home/OrderList/Follow" element={<OrderFinaly />}/>
 
                 <Route path='/Home/RestaurantPage/:id' element={<RestaurantPage product={product}/>}/>
                 <Route path='/Home/RestaurantPage/:id/product/:id' element={<ProductPage idArray={id}/>}/>
