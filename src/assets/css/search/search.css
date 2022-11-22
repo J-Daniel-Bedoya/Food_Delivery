@@ -48,11 +48,19 @@
     flex-direction: column;
     gap: .6rem;
 }
+.search__lista--img img{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 100%;
+}
 .search__lista--name{
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 1.4rem;
+    gap: 2.1rem;
+}
+.search__lista--name{
+    font-size: 14px;
 }
 .search__img{
     width: 40px;

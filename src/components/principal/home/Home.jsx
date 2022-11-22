@@ -17,7 +17,7 @@ import {
   deleteDoc, 
   setDoc,
 } from 'firebase/firestore';
-import Footer from '../footer/Footer';
+import Footer from '../footer/Footer'; 
 // import { list } from 'firebase/storage';
 
 
@@ -48,7 +48,7 @@ const HomePagina = () => {
       <div className='home__container'>
         <div className='topHome' onClick={() => navigate("/Home/ManageAddress")}>
           <img src={img_ubicacion} alt="" className='img_ubicacion' />
-          <div>
+          <div className='home__container--address'>
             <p>DELIVER TO</p>
             <p>Medellín, Antioquia</p>
           </div>
@@ -73,7 +73,7 @@ const HomePagina = () => {
             lista?.map(list => (
               <div key={list.id} className='home__restaurantes' onClick={() => navigate(`/Home/RestaurantPage/${list.id}`)}>
                 <img src={list.image} alt={list.name} className='img_restaurante' />
-                <div>
+                <div className='home__restaurantes--text'>
                   <p>{list.name}</p>
                   <img src={list.stars} alt="stars" className='img_calificacion'/>
                   <p>Work time {list.workTimeStart} - {list.workTimeFinalice}</p>
