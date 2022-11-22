@@ -8,6 +8,7 @@ import RestaurantPage from './components/principal/home/RestaurantPage';
 import ManageAddress from './components/principal/home/ManageAddress';
 import OrderHistory from './components/principal/ordersHistory/OrderHistory';
 import Profile from './components/principal/profile/Profile';
+import ProfileEdit from './components/principal/profile/ProfileEdit';
 
 import ProductPage from './components/principal/home/ProductPage';
 import { onAuthStateChanged } from "firebase/auth";
@@ -95,6 +96,7 @@ function App() {
                 <Route path='/Search' element={<SearchPage/>}/>
                 <Route path='/OrderHistory' element={<OrderHistory />}/>
                 <Route path='/Profile' element={<Profile />}/>
+                <Route path='/ProfileEdit' element={<ProfileEdit />}/>
                 
                 <Route path="/Home/OrderList/:id" element={<OrderList />}/>
 

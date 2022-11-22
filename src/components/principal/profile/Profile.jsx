@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import Footer from '../footer/Footer';
 
+import img_usuario from '../../../assets/imgs/png/usuario.png';
+import flecha_derecha from '../../../assets/imgs/png/flecha_derecha.png';
+
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../../firebase/firebaseConfig";
 import { useDispatch, useSelector } from 'react-redux';
@@ -38,8 +41,13 @@ const Profile = () => {
           <div className='img' style={{backgroundImage: `url(${info.photoURL})`}}></div>
           <p>{info.displayName}</p>
         </div>
+        <div className='info_profile'>
+          <img src={img_usuario} alt="" className='img_usuario' />
+          <p>Account edit</p>
+          <img src={flecha_derecha} alt="" className='flecha_derecha' />
+        </div>
         <div>
-          <button onClick={logOut}>Logout</button>
+          <button className='btn_logout' onClick={logOut}>Logout</button>
         </div>
       </div>
       <div className='footer'>
