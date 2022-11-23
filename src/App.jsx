@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+// import env from "react-dotenv";
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import Loader from './components/loader/Loader';
 import SlicePagina from './components/carrusel/SlicePagina';
@@ -22,9 +23,11 @@ import { actionLoginSync } from "./redux/actions/userActions";
 import Login from "./components/autenticación/Login";
 import OrderList from "./components/orders/OrderList";
 import OrderFinaly from "./components/orders/OrderFinaly";
+import HomeAdministrator from "./components/homeAdmin/HomeAdministrator";
+
+
 
 function App() {
-
   const [time, setTime] = useState(false);
 
   setTimeout(() => {
@@ -78,6 +81,18 @@ function App() {
 
     );
   }, [setIsLoggedIn, dispatch, userStore]);
+    console.log(window.env?.ADMIN)
+    const home = () => {
+      if (
+        auth.lastNotifiedUid === "ce9NcSYhfsduAmD5QkcOcTOiMyg2" 
+        // || auth.lastNotifiedUid === ""
+      ){
+        return <HomeAdministrator />
+      }else{
+        return <HomePagina />
+      }
+    }
+    
 
   return (
     <HashRouter>
@@ -93,7 +108,8 @@ function App() {
               </Route>
 
               <Route element={<PrivateRouter isAuthentication={isLoggedIn} />}>
-                <Route path='/Home' element={<HomePagina/>}/>
+                
+                <Route path='/Home' element={home()}/>
                 <Route path='/Search' element={<SearchPage/>}/>
                 <Route path='/OrderHistory' element={<OrderHistory />}/>
                 <Route path='/Profile' element={<Profile />}/>

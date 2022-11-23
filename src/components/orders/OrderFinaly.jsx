@@ -4,6 +4,7 @@ import exito from '../../assets/imgs/png/SvgExit.png';
 
 const OrderFinaly = () => {
   const navigate = useNavigate();
+
   return (
     <div className='orderFinaly'>
       <div>
