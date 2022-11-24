@@ -86,7 +86,7 @@ function App() {
     const home = () => {
       if (
         auth.lastNotifiedUid === "sMsPH8ogrFc2HYDFDph9x742fZA2" 
-        // || auth.lastNotifiedUid === ""
+        || auth.lastNotifiedUid === "1sC7REb1ZBYWL3lb4jVDtna7y072"
       ){
         return <HomeAdministrator />
       }else{
