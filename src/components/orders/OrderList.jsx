@@ -14,7 +14,9 @@ import {
   doc, 
   deleteDoc, 
   setDoc,
+  addDoc,
 } from 'firebase/firestore';
+import { async } from '@firebase/util';
 
 const OrderList = () => {
 
@@ -40,6 +42,18 @@ const OrderList = () => {
     }
     getStore();
   }, [])
+
+  const postOrderVaucher = async() => {
+    navigate("/Home/OrderList/Follow");
+
+    // try {
+    //   await addDoc(collection(db, 'voucher'), {
+
+    //   })
+    // } catch (error) {
+    //   throw(error)
+    // }
+  }
   
   const delivery = 4
   const total = Number(price[0]) + delivery
@@ -85,7 +99,7 @@ const OrderList = () => {
         </div>
       </div>
       <div className='orderList__btn'>
-        <button onClick={() => navigate("/Home/OrderList/Follow")}>Order</button>
+        <button onClick={() => postOrderVaucher()}>Order</button>
       </div>
     </div>
   )

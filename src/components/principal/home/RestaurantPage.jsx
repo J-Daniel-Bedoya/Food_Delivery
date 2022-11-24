@@ -30,13 +30,14 @@ const RestaurantPage = ({product}) => {
         consulta.forEach(doc => {
           docs.push({...doc.data(), id:doc.id})
         }) 
-        setLista(docs[id-1]);
+        setLista(docs);
       } catch (error) {
         throw error;
       }
     }
     getStore();
   }, [])
+  console.log(lista)
   
   return (
     <div className='restaurantPage'>
@@ -54,7 +55,7 @@ const RestaurantPage = ({product}) => {
             <p>{lista?.description}</p>
             <div className='restaurantPage__description--stars'>
               <img src={lista?.stars} alt="stars" />
-              <p className='restaurantPage__description--time'>{lista?.menus[0].time}</p>
+              <p className='restaurantPage__description--time'>{lista?.menus?.[0].time}</p>
             </div>
           </div>
         </div>
@@ -67,7 +68,7 @@ const RestaurantPage = ({product}) => {
       </div>
       <div className='restaurantPage__menu'>
         {
-          lista?.menus.map((menu, i) => (
+          lista?.menus?.map((menu, i) => (
             <div key={menu.img} onClick={() => product(id-1)}>
               <div 
                 onClick={() => navigate(`/Home/RestaurantPage/${id}/product/${i+1}`)}

@@ -24,6 +24,7 @@ import Login from "./components/autenticación/Login";
 import OrderList from "./components/orders/OrderList";
 import OrderFinaly from "./components/orders/OrderFinaly";
 import HomeAdministrator from "./components/homeAdmin/HomeAdministrator";
+import CreateRestaurant from "./components/homeAdmin/CreateRestaurant";
 
 
 
@@ -84,7 +85,7 @@ function App() {
     console.log(window.env?.ADMIN)
     const home = () => {
       if (
-        auth.lastNotifiedUid === "ce9NcSYhfsduAmD5QkcOcTOiMyg2" 
+        auth.lastNotifiedUid === "sMsPH8ogrFc2HYDFDph9x742fZA2" 
         // || auth.lastNotifiedUid === ""
       ){
         return <HomeAdministrator />
@@ -121,6 +122,8 @@ function App() {
                 <Route path='/Home/RestaurantPage/:id' element={<RestaurantPage product={product}/>}/>
                 <Route path='/Home/RestaurantPage/:id/product/:id' element={<ProductPage idArray={id}/>}/>
                 <Route path='/Home/ManageAddress' element={<ManageAddress />}/>
+
+                <Route path="/Home/create" element={<CreateRestaurant />}/>
               </Route>
 
               <Route path='/' element={<SlicePagina />}/>

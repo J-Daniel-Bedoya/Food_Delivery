@@ -41,7 +41,7 @@ const HomePagina = () => {
     }
     getStore();
   }, [])
-  
+  console.log(lista)
 
   return (
     <div className='home'>
