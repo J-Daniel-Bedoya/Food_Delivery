@@ -1,11 +1,12 @@
 import { async } from '@firebase/util';
 import { addDoc, collection, getFirestore } from 'firebase/firestore';
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import app from '../../firebase/firebaseConfig';
 
 const CreateRestaurant = () => {
   const { register, handleSubmit } = useForm();
+  const [restaurant, setRestaurant] = useState();
   const db = getFirestore(app)
   const onSubmit = async (form) => {
     console.log(form);
@@ -17,55 +18,56 @@ const CreateRestaurant = () => {
       throw (error)
     }
   }
+  const onSubmitRestaurant = (form) => {
+    setRestaurant(form)
+  }
 
+  const onSubmitMenu = (form) => {
+    restaurant.menus = form 
+    onSubmit(restaurant)
+  }
   return (
-    <div>
-      <div className='info_createAdmin'>
-        <form onSubmit={handleSubmit(onSubmit)}>
+    <div className='createAdmin'>
+      <div className='info_createAdmin'> 
+        <form onSubmit={handleSubmit(onSubmitRestaurant)}>
           <div className='details_createAdmin'>
-            <label> Name {" "}
-              <input type="text" {...register("name")} />
-            </label>
+            <label htmlFor='name'> Name </label>
+              <input type="text" id={"name"}{...register("name")} />
           </div>
-          <div className='details_createAdmin1'>
-            <label> Stars {" "}
-              <input type={"number"} {...register("stars")} />
-            </label>
+          <div className='details_createAdmin'>
+            <label htmlFor='stars'> Stars </label>
+            <input type={"number"} id={"stars"}{...register("stars")} />
           </div>
-          <div className='details_createAdmin2'>
-            <label> Description {" "}
+          <div className='details_createAdmin'>
+            <label> Description </label>
               <input type="text" {...register("description")} />
-            </label>
           </div>
-          <div className='details_createAdmin3'>
-            <label> Work Time Start {" "}
-              <input type="text" {...register("workTimeStart")} />
-            </label>
+          <div className='details_createAdmin'>
+            <label> Work Time Start </label>
+            <input type="text" {...register("workTimeStart")} />
           </div>
-          <div className='details_createAdmin4'>
-            <label> Work Time Finalice {" "}
-              <input type="text" {...register("workTimeFinalice")} />
-            </label>
+          <div className='details_createAdmin'>
+            <label> Work Time Finalice </label>
+            <input type="text" {...register("workTimeFinalice")} />
           </div>
-          <div className='details_createAdmin5'>
-            <label> Image {" "}
-              <input type="text" {...register("image")} />
-            </label>
+          <div className='details_createAdmin'>
+            <label> Image </label>
+            <input type="text" {...register("image")} />
           </div>
-          <div className='details_createAdmin6'>
-            <label> Image logo {" "}
-              <input type="text" {...register("imageLogo")} />
-            </label>
+          <div className='details_createAdmin'>
+            <label> Image logo </label>
+            <input type="text" {...register("imageLogo")} />
           </div>
-          <div className='details_createAdmin7'>
-            <label> Before You {" "}
-              <input type="text" {...register("beforeYou")} />
-            </label>
+          <div className='details_createAdmin'>
+            <label> Before You </label>
+            <input type="text" {...register("beforeYou")} />
           </div>
-          <div>
+          <div className='details_createAdmin'>
             <button className='btn_create' type={"submit"}>Create</button>
           </div>
         </form>
+
+        <form onSubmit={handleSubmit(onSubmitMenu)}></form>
       </div>
     </div>
   )

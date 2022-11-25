@@ -8,117 +8,39 @@
     border-radius: 15px;
     font-weight: bolder;
 }
-.info_createAdmin{
-    width: 85%;
-    height: 50vh;
+/* create */
+.createAdmin{
+    width: 100vw;
+    height: 100vh;
+    padding: 1rem;
+}
+.info_createAdmin form{
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    align-items: center;
+    gap: .8rem;
+    padding: 1rem ;
     background-color: rgba(224, 221, 221, 0.637);
-    margin-left: 2rem;
-    margin-top: 3rem;
     border-radius: 15px;
-    padding-top: 2rem;
-    padding-left: 15px;
-    color: rgb(90, 89, 89);
+    color: #5a5959;
     font-weight: bold;
+    font-size: 14px;
 }
 .details_createAdmin{
     width: 100%;
     height: 5vh;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 .details_createAdmin input {
-    margin-left: 6.5rem;
+    width: auto;
     border: none;
     border-radius: 5px;
-    height: 25px;
-}
-
-.details_createAdmin1{
-    width: 100%;
-    height: 5vh;
-    display: flex;
-    flex-direction: column;
-}
-.details_createAdmin1 input {
-    margin-left: 6.8rem;
-    border: none;
-    border-radius: 5px;
-    height: 25px;
-}
-.details_createAdmin2{
-    width: 100%;
-    height: 5vh;
-    display: flex;
-    flex-direction: column;
-}
-.details_createAdmin2 input {
-    margin-left: 4rem;
-    border: none;
-    border-radius: 5px;
-    height: 25px;
-}
-.details_createAdmin3{
-    width: 100%;
-    height: 5vh;
-    display: flex;
-    flex-direction: column;
-}
-.details_createAdmin3 input {
-    margin-left: 1.9rem;
-    border: none;
-    border-radius: 5px;
-    height: 25px;
-}
-.details_createAdmin4{
-    width: 100%;
-    height: 5vh;
-    display: flex;
-    flex-direction: column;
-}
-.details_createAdmin4 input {
-    margin-left: 0.6rem;
-    border: none;
-    border-radius: 5px;
-    height: 25px;
-}
-.details_createAdmin5{
-    width: 100%;
-    height: 5vh;
-    display: flex;
-    flex-direction: column;
-}
-.details_createAdmin5 input {
-    margin-left: 6.4rem;
-    border: none;
-    border-radius: 5px;
-    height: 25px;
-}
-.details_createAdmin6{
-    width: 100%;
-    height: 5vh;
-    display: flex;
-    flex-direction: column;
-}
-.details_createAdmin6 input {
-    margin-left: 4.2rem;
-    border: none;
-    border-radius: 5px;
-    height: 25px;
-}
-.details_createAdmin7{
-    width: 100%;
-    height: 5vh;
-    display: flex;
-    flex-direction: column;
-}
-.details_createAdmin7 input {
-    margin-left: 4.2rem;
-    border: none;
-    border-radius: 5px;
-    height: 25px;
+    height: 100%;
+    
 }
 .btn_create{
     width: 80%;
