@@ -11,7 +11,9 @@ import {
   deleteDoc, 
   setDoc,
 } from 'firebase/firestore';
-import Footer from '../principal/footer/Footer'; 
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../../firebase/firebaseConfig";
+import { useSelector } from 'react-redux';
 
 
 
@@ -36,13 +38,34 @@ const HomeAdministrator = () => {
     getStore();
   }, [])
   
+  const userStore = useSelector((store) => store.userStore);
+
+  const [info, setInfo] = useState({});
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      const {
+        displayName,
+        email,
+        phoneNumber,
+        photoURL,
+      } = user?.auth.currentUser;
+      setInfo({displayName, email, phoneNumber, photoURL})
+    });
+    
+  }, [userStore]);
+  // console.log(info)
 
   return (
     <div className='homeAdmin'> 
-      <div>
+      <h2>Settings</h2>
+      <div className='homeAdmin__img'>
+        <div className='imgUserAdmin' style={{backgroundImage: `url(${info.photoURL})`}}></div>
+        <p>{info.displayName}</p>
+      </div>
+      <div className='homeAdmin__btn'>
         <button className='createRestaurant' onClick={() => navigate("/Home/create")}>Create new restaurant</button>
       </div>
-      <div>
+      <div className='homeAdmin__btn'>
         <button className='createRestaurant' onClick={() => navigate("/Home/delete")}>Delete restaurant</button>
       </div>
     </div>
