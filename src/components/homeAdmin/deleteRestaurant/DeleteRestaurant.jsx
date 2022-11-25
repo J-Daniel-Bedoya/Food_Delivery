@@ -43,6 +43,9 @@ const DeleteRestaurant = () => {
   return (
     <>
       <div className="DeleteRestaurant">
+        <div className="DeleteRestaurant__irAtras">
+          <button onClick={() => navigate(-1)}><i class="fa-solid fa-arrow-left"></i></button>
+        </div>
         <h3>Que restaurante deseas eliminar?</h3>
         <div>
           {lista?.map((list) => (
@@ -56,9 +59,7 @@ const DeleteRestaurant = () => {
             </div>
           ))}
         </div>
-        <div>
-          <button onClick={() => navigate(-1)}>Ir atras</button>
-        </div>
+        
         {modale && (
           <ModaleDelete modale={modale} setModale={setModale} id={id} />
         )}

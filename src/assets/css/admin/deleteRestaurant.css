@@ -1,7 +1,7 @@
 .DeleteRestaurant {
   width: 100%;
   height: 100vh;
-  padding: 1rem;
+  padding: 3.5rem 1rem;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
@@ -19,6 +19,16 @@
 }
 .DeleteRestaurant__restaurant img{
   width: 50px;
+}
+.DeleteRestaurant__irAtras button{
+  background-color: #f3f1e884;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: none;
 }
 
 .modaleDelete{
