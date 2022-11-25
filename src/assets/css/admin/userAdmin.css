@@ -1,0 +1,131 @@
+.createRestaurant{
+    width: 80%;
+    height: 5vh;
+    margin-top: 10rem;
+    margin-left: 2.5rem;
+    background-color: rgba(255, 224, 49, 1);
+    border: none;
+    border-radius: 15px;
+    font-weight: bolder;
+}
+.info_createAdmin{
+    width: 85%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: rgba(224, 221, 221, 0.637);
+    margin-left: 2rem;
+    margin-top: 3rem;
+    border-radius: 15px;
+    padding-top: 2rem;
+    padding-left: 15px;
+    color: rgb(90, 89, 89);
+    font-weight: bold;
+}
+.details_createAdmin{
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    flex-direction: column;
+}
+.details_createAdmin input {
+    margin-left: 6.5rem;
+    border: none;
+    border-radius: 5px;
+    height: 25px;
+}
+
+.details_createAdmin1{
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    flex-direction: column;
+}
+.details_createAdmin1 input {
+    margin-left: 6.8rem;
+    border: none;
+    border-radius: 5px;
+    height: 25px;
+}
+.details_createAdmin2{
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    flex-direction: column;
+}
+.details_createAdmin2 input {
+    margin-left: 4rem;
+    border: none;
+    border-radius: 5px;
+    height: 25px;
+}
+.details_createAdmin3{
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    flex-direction: column;
+}
+.details_createAdmin3 input {
+    margin-left: 1.9rem;
+    border: none;
+    border-radius: 5px;
+    height: 25px;
+}
+.details_createAdmin4{
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    flex-direction: column;
+}
+.details_createAdmin4 input {
+    margin-left: 0.6rem;
+    border: none;
+    border-radius: 5px;
+    height: 25px;
+}
+.details_createAdmin5{
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    flex-direction: column;
+}
+.details_createAdmin5 input {
+    margin-left: 6.4rem;
+    border: none;
+    border-radius: 5px;
+    height: 25px;
+}
+.details_createAdmin6{
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    flex-direction: column;
+}
+.details_createAdmin6 input {
+    margin-left: 4.2rem;
+    border: none;
+    border-radius: 5px;
+    height: 25px;
+}
+.details_createAdmin7{
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    flex-direction: column;
+}
+.details_createAdmin7 input {
+    margin-left: 4.2rem;
+    border: none;
+    border-radius: 5px;
+    height: 25px;
+}
+.btn_create{
+    width: 80%;
+    height: 4vh;
+    border: none;
+    border-radius: 15px;
+    background-color: rgba(255, 224, 49, 1);
+    margin-left: 1.7rem;
+    margin-top: 0.5rem;
+}
