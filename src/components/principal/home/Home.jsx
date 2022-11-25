@@ -20,7 +20,6 @@ import {
 import Footer from '../footer/Footer'; 
 
 
-
 const HomePagina = () => {
   const navigate = useNavigate();
   const db = getFirestore(app)

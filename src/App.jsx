@@ -24,7 +24,8 @@ import Login from "./components/autenticación/Login";
 import OrderList from "./components/orders/OrderList";
 import OrderFinaly from "./components/orders/OrderFinaly";
 import HomeAdministrator from "./components/homeAdmin/HomeAdministrator";
-import AddNewRestaurant from "./components/homeAdmin/AddNewRestaurant";
+import AddNewRestaurant from "./components/homeAdmin/createRestaurant/AddNewRestaurant";
+import DeleteRestaurant from "./components/homeAdmin/deleteRestaurant/DeleteRestaurant";
 
 
 
@@ -125,6 +126,7 @@ function App() {
                 <Route path='/Home/ManageAddress' element={<ManageAddress />}/>
 
                 <Route path="/Home/create" element={<AddNewRestaurant />}/>
+                <Route path="/Home/delete" element={<DeleteRestaurant />}/>
               </Route>
 
               <Route path='/' element={<SlicePagina />}/>

@@ -38,12 +38,12 @@ const HomeAdministrator = () => {
   
 
   return (
-    <div className='homeAdmin'>
-      <div>
-
-      </div>
+    <div className='homeAdmin'> 
       <div>
         <button className='createRestaurant' onClick={() => navigate("/Home/create")}>Create new restaurant</button>
+      </div>
+      <div>
+        <button className='createRestaurant' onClick={() => navigate("/Home/delete")}>Delete restaurant</button>
       </div>
     </div>
   )
