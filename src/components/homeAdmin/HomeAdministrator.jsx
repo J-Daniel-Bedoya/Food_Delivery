@@ -44,6 +44,7 @@ const HomeAdministrator = () => {
       </div>
       <div>
         <button onClick={() => navigate("/Home/create")}>Create new restaurant</button>
+        <button onClick={() => navigate("/Home/create")}></button>
       </div>
     </div>
   )

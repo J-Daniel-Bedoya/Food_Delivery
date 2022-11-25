@@ -37,8 +37,9 @@ function App() {
 
 
   const [id, setId] = useState(0);
-  const product = (id, i) => {
+  const product = (id) => {
     setId(id);
+    
   }
 
   const [isLoggedIn, setIsLoggedIn] = useState(null);
@@ -82,7 +83,7 @@ function App() {
 
     );
   }, [setIsLoggedIn, dispatch, userStore]);
-    console.log(window.env?.ADMIN)
+    // console.log(window.env?.ADMIN)
     const home = () => {
       if (
         auth.lastNotifiedUid === "sMsPH8ogrFc2HYDFDph9x742fZA2" 
