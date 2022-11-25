@@ -26,6 +26,7 @@ const ModaleDelete = ({modale, setModale, id}) => {
     }
   }
   const cerrar = () => {
+    setModale(!modale)
   }
   // console.log(id)
   return (
