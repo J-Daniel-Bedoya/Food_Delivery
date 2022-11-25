@@ -46,7 +46,7 @@ const DeleteRestaurant = () => {
         <div className="DeleteRestaurant__irAtras">
           <button onClick={() => navigate(-1)}><i class="fa-solid fa-arrow-left"></i></button>
         </div>
-        <h3>Que restaurante deseas eliminar?</h3>
+        <h3>¿Que restaurante deseas eliminar?</h3>
         <div>
           {lista?.map((list) => (
             <div
