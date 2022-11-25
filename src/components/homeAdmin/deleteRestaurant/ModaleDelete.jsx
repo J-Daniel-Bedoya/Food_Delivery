@@ -12,12 +12,13 @@ import {
 } from 'firebase/firestore';
 
 
+
 const ModaleDelete = ({modale, setModale, id}) => {
+
   const db = getFirestore(app)
   const deleteRestaurant = async(id) => {
     try {
-      const docRef = (db, 'stores', id)
-      await deleteDoc(docRef);
+      await deleteDoc(doc(db, 'stores', id));
     } catch (error) {
       throw(error)
     }
@@ -25,7 +26,7 @@ const ModaleDelete = ({modale, setModale, id}) => {
   const cerrar = () => {
     setModale(!modale)
   }
-  console.log(id)
+  // console.log(id)
   return (
     <div className='modaleDelete'>
       <div className='modaleDelete__container'>
@@ -33,6 +34,7 @@ const ModaleDelete = ({modale, setModale, id}) => {
         <button onClick={() => deleteRestaurant(id)}>Yes</button>
         <button onClick={() => cerrar()}>Cerrar</button>
       </div>
+
     </div>
   )
 }

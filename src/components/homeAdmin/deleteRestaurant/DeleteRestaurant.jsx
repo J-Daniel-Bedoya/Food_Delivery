@@ -10,8 +10,10 @@ import {
   setDoc,
 } from "firebase/firestore";
 import ModaleDelete from "./ModaleDelete";
+import { useNavigate } from 'react-router-dom';
 
 const DeleteRestaurant = () => {
+  const navigate = useNavigate();
   const db = getFirestore(app);
   const [lista, setLista] = useState();
 
@@ -53,6 +55,9 @@ const DeleteRestaurant = () => {
               <p>{list.name}</p>
             </div>
           ))}
+        </div>
+        <div>
+          <button onClick={() => navigate(-1)}>Ir atras</button>
         </div>
         {modale && (
           <ModaleDelete modale={modale} setModale={setModale} id={id} />
