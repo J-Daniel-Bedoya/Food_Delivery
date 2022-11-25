@@ -56,7 +56,9 @@ const AddNewRestaurant = () => {
       <CreateRestaurant onSubmitRestaurant={onSubmitRestaurant}/>
       <CreateMenu onSubmitMenu={onSubmitMenu}/>
       {/* <AditionalIngredients onSubmitIngredients={onSubmitIngredients}/> */}
-      <button onClick={() => createRestaurant()}>Crear Restaurante</button>
+      <div className="createAdmin__btn">
+        <button onClick={() => createRestaurant()}>Crear Restaurante</button>
+      </div>
     </div>
   )
 }
