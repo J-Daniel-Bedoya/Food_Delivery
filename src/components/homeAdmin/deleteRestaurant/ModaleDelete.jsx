@@ -33,7 +33,7 @@ const ModaleDelete = ({modale, setModale, id}) => {
       <div className='modaleDelete__container'>
         <p>¿Deseas eliminar este restaurante?</p>
         <button onClick={() => deleteRestaurant(id)}>Yes</button>
-        {/* <button onClick={() => cerrar()}>Cerrar</button> */}
+        <button onClick={() => cerrar()}>Cacelar</button>
       </div>
 
     </div>
