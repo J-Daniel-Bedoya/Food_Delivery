@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Footer from '../footer/Footer';
 
 import img_usuario from '../../../assets/imgs/png/usuario.png';
-import flecha_derecha from '../../../assets/imgs/png/flecha_derecha.png';
+import flecha_derecha from '../../../assets/imgs/png/flecha_Derecha.png';
 
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../../firebase/firebaseConfig";
