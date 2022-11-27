@@ -5,11 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "react-dotenv && react-scripts vite build",
-    "test": "react-scripts test",
-    "preview": "vite preview",
-    "serve": "react-dotenv && serve build",
-    "eject": "react-scripts eject"
+    "build": "build",
+    "test": "test",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@hookform/resolvers": "^2.9.10",
