@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
-import master from '../../assets/imgs/png/MasterCard.png';
+import master from '../../assets/imgs/png/Master.png';
 import paypal from '../../assets/imgs/png/PayPal.png';
 import cash from '../../assets/imgs/png/Cash.png';
 import address from '../../assets/imgs/png/SvgDirection.png';
