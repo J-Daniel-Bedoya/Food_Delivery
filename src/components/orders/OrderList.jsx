@@ -9,14 +9,8 @@ import app from '../../firebase/firebaseConfig';
 import { 
   getFirestore, 
   collection,
-  getDoc, 
-  getDocs, 
-  doc, 
-  deleteDoc, 
-  setDoc,
-  addDoc,
+  getDocs,  
 } from 'firebase/firestore';
-import { async } from '@firebase/util';
 
 const OrderList = () => {
 
