@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Footer from '../footer/Footer';
 
 import img_restaurantRecent from '../../../assets/imgs/png/Maskgroup.png';
-import flecha_derecha from '../../../assets/imgs/png/flecha_derecha.png';
+import flecha_derecha from '../../../assets/imgs/png/flecha_Derecha.png';
 
 const OrderHistory = () => {
   const navigate = useNavigate();
