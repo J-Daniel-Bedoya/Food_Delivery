@@ -84,7 +84,6 @@ function App() {
 
     );
   }, [setIsLoggedIn, dispatch, userStore]);
-    // console.log(window.env?.ADMIN)
     const home = () => {
       if (
         auth.lastNotifiedUid === "sMsPH8ogrFc2HYDFDph9x742fZA2" 
