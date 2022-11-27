@@ -18,7 +18,7 @@ const Login = () => {
     dispatch(loginProviderAsync('google'))
   }
 
-  return (
+  return ( 
     <div>
       <p className='title_cuenta'>Create account</p>
       <form onSubmit={handleSubmit(onSubmit)} className='input_cuenta'>
